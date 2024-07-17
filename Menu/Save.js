@@ -11,7 +11,7 @@ function saveGame(){
     fs.writeFileSync('./Save/saveFile.json', JSON.stringify(saveFile));
   }
   else{
-    const answer = "Would you like to overwrite your previous saved file [Y/N]: ";
+    const answer = readlineSync.question("Would you like to overwrite your previous saved file [Y/N]: ");
     if (answer == "Y"){
       const saveFile = { player: GameState.player, location: GameState.location};
       fs.writeFileSync('./Save/saveFile.json', JSON.stringify(saveFile));

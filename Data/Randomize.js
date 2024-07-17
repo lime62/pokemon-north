@@ -34,7 +34,7 @@ function randomizePokemon(pokemon, starter=false){
   pokemon.totalHealth = Math.floor(0.01 * (2 * pokemon.baseHealth + pokemon.healthIV + Math.floor(0.25 * pokemon.healthEV)) * pokemon.level) + pokemon.level + 10;
   pokemon.currentHealth = pokemon.totalHealth;
 
-  // Handling Attack, Defense, Sp.Attack and Sp.Defense
+  // Handling Attack, Defense, Spped, Sp.Attack and Sp.Defense
   pokemon.attack = (Math.floor(0.01 * (2 * pokemon.baseAttack + pokemon.attackIV + Math.floor(0.25 * pokemon.attackEV)) * pokemon.level) + 5);
   pokemon.defense = (Math.floor(0.01 * (2 * pokemon.baseDefense + pokemon.defenseIV + Math.floor(0.25 * pokemon.defenseEV)) * pokemon.level) + 5);
   pokemon.speed = (Math.floor(0.01 * (2 * pokemon.baseSpeed + pokemon.speedIV + Math.floor(0.25 * pokemon.speedEV)) * pokemon.level) + 5);
