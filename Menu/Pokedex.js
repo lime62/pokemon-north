@@ -27,5 +27,15 @@ class Pokedex {
       }
     });
   }
+
+  ownedPokemon(){
+    let owned = 0;
+    this.#pokemon.forEach(pokemon => {
+      if(pokemon.owned == true){
+        ++owned;
+      }
+    });
+    return owned;
+  }
 }
 module.exports = Pokedex;

@@ -13,6 +13,7 @@ function display(){
      if(dataSaved){
        console.log(`Player: ${saveFile.player.name}`);
        console.log(`Badges: ${saveFile.player.badges}`);
+       console.log(`Pokedex: ${saveFile.player.Pokedex.ownedPokemon()}`);
        start = readlineSync.question("Start game [Y]");
      }
      else{

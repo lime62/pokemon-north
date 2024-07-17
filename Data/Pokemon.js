@@ -10,6 +10,7 @@ const Pokemon = [
     type: [Type[11], Type[7]],
     abilities: [Abilities[0], Abilities[1]],
     genderRatio: 0.5,
+    owned: false,
     learnset: [
       {
         level: 0, move: [Moves[0], Moves[1]]

@@ -11,7 +11,12 @@ function saveGame(){
     fs.writeFileSync('./Save/saveFile.json', JSON.stringify(saveFile));
   }
   else{
+    // Ask the user if they want to overwrite their previous saved file
     const answer = readlineSync.question("Would you like to overwrite your previous saved file [Y/N]: ");
+    console.log(`Player: ${saveFile.player.name}`);
+    console.log(`Badges ${saveFile.player.badges}`);
+    console.log(`Pokedex: ${saveFile.player.Pokedex.ownedPokemon()}`);
+    //TODO: Add their total owned pokemon from the pokedex.
     if (answer == "Y"){
       const saveFile = { player: GameState.player, location: GameState.location};
       fs.writeFileSync('./Save/saveFile.json', JSON.stringify(saveFile));
