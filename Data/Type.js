@@ -1,12 +1,30 @@
+/*
+    ATTACK PROPERTIES
+    Attack No Effect: This attack type has no effect on the following types
+    Attack Not Effective: This attack type is not very effective against the following types
+    Attack Neutral: This attack type is effective against the following types
+    Attack Super Effective: This attack type is super effective against the following types
+
+    DEFENSE PROPERTIES
+    Defense No Effect: The following types have no effect on a pokemon with this type
+    Defense Not Effective: The following types are not very effective on a pokemon with this type
+    Defense Neutral: The following types are effective against a pokemon with this type
+    Defense Super Effective: The following types are super effective against a pokemon with this type
+
+    TYPE MODIFIERS
+    Super Effective: 2x
+    Neutral: 1x
+    Not Very Effective: 1/2x
+    Not Effective: 0
+  */
+
 const Type = [
   {
     name: "Normal",
-    //Take these into account when using a normal type move.
     attackNoEffect: ["Ghost"],
     attackNotEffective: ["Rock", "Steel"],
     attackNeutral: ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Dragon", "Dark", "Fairy"],
     attackSuperEffective: [],
-    //Take these into account when a move is used against a normal type pokemon.
     defenseNoEffect: ["Ghost"],
     defenseNotEffective: ["Rock", "Steel"],
     defenseNeutral: ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Poison", "Ground", "Flying", "Psychic", "Bug", "Dragon", "Dark", "Fairy"],
@@ -14,12 +32,10 @@ const Type = [
   },
   {
     name: "Fire",
-    //Take these into account when using a fire type move.
     attackNoEffect: [],
     attackNotEffective: ["Fire", "Water", "Rock", "Dragon"],
     attackNeutral: ["Normal", "Electric", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Ghost", "Dark", "Fairy"],
     attackSuperEffective: ["Grass", "Ice", "Bug", "Steel"],
-    //Take these into account when a move is used against a fire type pokemon.
     defenseNoEffect: [],
     defenseNotEffective: ["Fire", "Grass", "Ice", "Bug", "Steel", "Fairy"],
     defenseNeutral: ["Normal", "Electric", "Fighting", "Poison", "Flying", "Psychic", "Ghost", "Dragon", "Dark"],
@@ -87,8 +103,8 @@ const Type = [
     attackNeutral: ["Normal", "Fire", "Water", "Electric", "Ice", "Figting", "Flying", "Psychic", "Bug", "Ghost", "Dragon", "Dark"],
     attackSuperEffective: [],
     defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
+    defenseNotEffective: ["Grass", "Fighting", "Poison", "Bug", "Fairy"],
+    defenseNeutral: ["Normal", "Fire", "Water", "Electric", "Ice", "Flying", "Rock", "Ghost", "Dragon", "Dark"],
     defenseSuperEffective: ["Ground", "Psychic"]
   },
   {
@@ -105,103 +121,110 @@ const Type = [
   {
     name: "Flying",
     attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
-    defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    attackNotEffective: ["Electric", "Rock", "Steel"],
+    attackNeutral: ["Normal", "Fire", "Water", "Ice", "Poison", "Ground", "Flying", "Psychic", "Ghost", "Dragon", "Dark", "Fairy"],
+    attackSuperEffective: ["Grass", "Fighting", "Bug"],
+    defenseNoEffect: ["Ground"],
+    defenseNotEffective: ["Grass", "Fighting", "Bug"],
+    defenseNeutral: ["Normal", "Fire", "Water", "Poison", "Flying", "Psychic", "Ghost", "Dragon", "Dark", "Steel", "Fairy"],
+    defenseSuperEffective: ["Electric", "Ice", "Rock"]
   },
   {
     name: "Psychic",
-    attackNoEffect: [],
-    attackNotEffective: [],
+    attackNoEffect: ["Dark"],
+    attackNotEffective: ["Psychic", "Steel"],
     attackNeutral: [],
-    attackSuperEffective: [],
+    attackSuperEffective: ["Fighting", "Poison"],
     defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    defenseNotEffective: ["Fighting", "Psychic"],
+    defenseNeutral: ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Poison", "Ground", "Flying", "Rock", "Dragon", "Steel", "Fairy"],
+    defenseSuperEffective: ["Bug", "Ghost", "Dark"]
   },
   {
     name: "Bug",
     attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
+    attackNotEffective: ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"],
+    attackNeutral: ["Normal", "Water", "Electric", "Ice", "Ground", "Bug", "Rock", "Dragon"],
+    attackSuperEffective: ["Grass", "Psychic", "Dark"],
     defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    defenseNotEffective: ["Grass", "Fighting", "Ground"],
+    defenseNeutral: ["Normal", "Water", "Electric", "Ice", "Poison", "Psychic", "Bug", "Ghost", "Dragon", "Dark", "Steel", "Fairy"],
+    defenseSuperEffective: ["Fire", "Flying", "Rock"]
   },
   {
     name: "Rock",
     attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
+    attackNotEffective: ["Fighting", "Ground", "Steel"],
+    attackNeutral: ["Normal", "Water", "Electric", "Grass", "Poison", "Psychic", "Rock", "Ghost", "Dragon", "Fairy"],
+    attackSuperEffective: ["Fire", "Ice", "Flying", "Bug"],
     defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    defenseNotEffective: ["Normal", "Fire", "Poison", "Flying"],
+    defenseNeutral: ["Electric", "Ice", "Psychic", "Bug", "Rock", "Ghost", "Dragon", "Dark", "Fairy"],
+    defenseSuperEffective: ["Water", "Grass", "Fighting", "Ground", "Steel"]
   },
   {
     name: "Ghost",
-    attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
-    defenseNoEffect: [],
-    defenseNotEffective: [],
+    attackNoEffect: ["Normal"],
+    attackNotEffective: ["Dark"],
+    attackNeutral: ["Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison", "Ground", "Flying", "Bug", "Rock", "Dragon", "Steel", "Fairy"],
+    attackSuperEffective: ["Psychic", "Ghost"],
+    defenseNoEffect: ["Normal", "Fighting"],
+    defenseNotEffective: ["Poison", "Bug"],
     defenseNeutral: [],
-    defenseSuperEffective: []
+    defenseSuperEffective: ["Ghost", "Dark"]
   },
   {
     name: "Dragon",
-    attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
+    attackNoEffect: ["Fairy"],
+    attackNotEffective: ["Steel"],
+    attackNeutral: ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dark"],
+    attackSuperEffective: ["Dragon"],
     defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    defenseNotEffective: ["Fire", "Water", "Electric", "Grass"],
+    defenseNeutral: ["Normal", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Dark", "Steel"],
+    defenseSuperEffective: ["Ice", "Dragon", "Fairy"]
   },
   {
     name: "Dark",
     attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
-    defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    attackNotEffective: ["Fighting", "Dark", "Fairy"],
+    attackNeutral: ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Poison", "Ground", "Flying", "Bug", "Rock", "Dragon", "Steel"],
+    attackSuperEffective: ["Psychic", "Ghost"],
+    defenseNoEffect: ["Psychic"],
+    defenseNotEffective: ["Ghost", "Dark"],
+    defenseNeutral: ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Poison", "Ground", "Flying", "Rock", "Dragon", "Steel"],
+    defenseSuperEffective: ["Fighting", "Bug", "Fairy"]
   },
   {
     name: "Steel",
     attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
-    defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    attackNotEffective: ["Fire", "Water", "Electric", "Steel"],
+    attackNeutral: ["Normal", "Electric", "Ice", "Fighting", "Poison", "Ground", "Flying", "Psychic", "Bug", "Ghost", "Dragon", "Dark"],
+    attackSuperEffective: ["Ice", "Rock", "Fairy"],
+    defenseNoEffect: ["Poison"],
+    defenseNotEffective: ["Normal", "Grass", "Ice", "Flying", "Psychic", "Bug", "Rock", "Dragon", "Steel", "Fairy"],
+    defenseNeutral: ["Water", "Electric", "Ghost", "Dark"],
+    defenseSuperEffective: ["Fire", "Fighting", "Ground"]
   },
   {
     name: "Fairy",
     attackNoEffect: [],
-    attackNotEffective: [],
-    attackNeutral: [],
-    attackSuperEffective: [],
-    defenseNoEffect: [],
-    defenseNotEffective: [],
-    defenseNeutral: [],
-    defenseSuperEffective: []
+    attackNotEffective: [""],
+    attackNeutral: ["Normal", "Water", "Electric", "Grass", "Ice", "Ground", "Flying", "Psychic", "Bug", "Rock", "Ghost", "Fairy"],
+    attackSuperEffective: ["Fighting", "Dragon", "Dark"],
+    defenseNoEffect: ["Dragon"],
+    defenseNotEffective: ["Fighting", "Bug", "Dark"],
+    defenseNeutral: ["Normal", "Fire", "Water", "Electric", "Grass", "Ice", "Ground", "Flying", "Psychic", "Rock", "Ghost", "Fairy"],
+    defenseSuperEffective: ["Poison", "Steel"]
   }
 ];
 
+const TypeModifiers = {
+  superEffective: 2.00,
+  neutral: 1.00,
+  notEffective: 0.5,
+  noEffect: 0,
+  STAB: 1.50
+}
 
-module.exports = Type;
+module.exports = Type, TypeModifiers;
