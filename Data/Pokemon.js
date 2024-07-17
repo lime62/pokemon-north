@@ -1,12 +1,13 @@
 // Describes pokemon data of all pokemon (name, type, gender ratio, learnset, etc.)
 const Moves = require("./Moves");
 const Abilities = require("./Abilities");
+const Type = require("./Type");
 
 const Pokemon = [
   {
     number: "#001",
     name: "Spinarak",
-    type: ["Bug", "Poison"],
+    type: [Type[11], Type[7]],
     abilities: [Abilities[0], Abilities[1]],
     genderRatio: 0.5,
     learnset: [

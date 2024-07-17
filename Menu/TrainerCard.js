@@ -5,8 +5,8 @@ class TrainerCard {
   #badges = 0;
 
   constructor(){
-    this.#name = "Player"
-    this.#gender = "Male"
+    this.#name = ""
+    this.#gender = ""
   }
   
   setDetails(name, gender){
