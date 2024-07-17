@@ -1,11 +1,7 @@
-const Player = require('../Data/Player');
+const update = require('./Update');
 
-const player = new Player("Margaret", "F");
+var gameEnded = false;
 
-console.log("Welcome to the world of pokemon!");
-console.log("Your first pokemon is Spinarak.");
-player.Party.initializeParty();
-console.log("Spinarak has been added to your party.");
-
-player.Pokedex.searchPokemon("Spinarak");
-
+while(!gameEnded){
+  update();
+}
