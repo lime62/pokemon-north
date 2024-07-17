@@ -13,6 +13,12 @@ class TrainerCard {
     this.#name = name;
     this.#gender = gender;
   }
+
+  displayTrainerCard(){
+    console.log(`Name: ${this.#name}`);
+    console.log(`Gender: ${this.#gender}`);
+    console.log(`Badges: ${this.#badges}`);
+  }
 }
 
 module.exports = TrainerCard;
