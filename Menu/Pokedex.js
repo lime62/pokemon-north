@@ -1,16 +1,16 @@
 const Pokemon = require('../Data/Pokemon');
 
 class Pokedex {
-  #Pokemon = [];
+  #pokemon = [];
 
   constructor(){
     Pokemon.forEach(pokemon => {
-      this.#Pokemon.push(pokemon);
+      this.#pokemon.push(pokemon);
     })
   }
 
   searchPokemon(name){
-    this.#Pokemon.forEach(pokemon => {
+    this.#pokemon.forEach(pokemon => {
       // Looks through the pokedex to find if the name is valid
       if(name == pokemon.name){
         console.log(pokemon.number);

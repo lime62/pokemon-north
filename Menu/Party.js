@@ -1,6 +1,3 @@
-const Pokemon = require('../Data/Pokemon');
-const Randomize = require('../Data/Randomize');
-
 class Party{
   #pokemon
 
@@ -8,30 +5,28 @@ class Party{
     this.#pokemon = [];
   }
 
-  initializeParty(){
-    //Initializes party with spinarak (starter)
-    //Need a mechanism for randomizing starter perhaps another module.
-    let starter = Randomize(Pokemon[0], true);
-    //Find a way to add current health
-    this.#pokemon[0] = starter;
-  }
-
-  //Shows list of pokemon in party when 'Pokemon' is selected in the menu
+  // Shows list of pokemon in party when 'Pokemon' is selected in the menu
   viewParty(){
-    //Show name, health and level
-    this.#pokemon.forEach(pokemon => {
-      console.log(pokemon.name);
-      console.log(pokemon.gender);
-      console.log(`HP: ${pokemon.currentHealth} / ${pokemon.totalHealth}`);
-      console.log(`Level: ${pokemon.level}`);
-    })
+    if(this.#pokemon.length > 1){
+      // Show name, health and level
+      this.#pokemon.forEach(pokemon => {
+        console.log(pokemon.name);
+        console.log(pokemon.gender);
+        console.log(`HP: ${pokemon.currentHealth} / ${pokemon.totalHealth}`);
+        console.log(`Level: ${pokemon.level}`);
+      });
+    }
+    return 0;
   }
 
-  // Shows detailed summary of individual pokemon
+  // Selects a pokemon from the party
   selectPokemon(index){
-    return this.#pokemon[index];
+    if(this.#pokemon.length > 1){
+      return this.#pokemon[index];
+    }
   }
 
+  // Shows a detailed summary of a selected pokemon.
   viewSummary(pokemon, player){
     console.log(`Dex.no ${pokemon.number}`);
     console.log(`Name: ${pokemon.name}`);
