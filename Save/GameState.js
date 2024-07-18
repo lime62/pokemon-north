@@ -2,6 +2,7 @@
 let GameState = {
   player: {},
   location: "",
+  position: "",
   menuOn: true,
   cutsceneOn: false
 }
