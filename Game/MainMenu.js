@@ -5,7 +5,7 @@ const fs = require('fs');
 
 function display(){
   GameState.menuOn = true;
-  console.log("Pokemon North");
+  console.log("\nPokemon North");
   console.log("~~~~~~~~~~~~~");
   const selection = readlineSync.question("New Game or Continue [N/C]: ");
   const dataSaved = saveFile.player && saveFile.location;
@@ -29,20 +29,22 @@ function display(){
         GameState.overworld = true;
        }
        else{
-        console.log("Invalid option.");
+        console.log("\nInvalid option selected.");
        }
      }
      else{
-      console.log("No saved data available.");
+      console.log("\nNo saved data available.");
      }
   }
   // If the player wants to start the new game check if they have previously had a save file
   else if (selection == "N"){
     if(dataSaved){
+      console.log('\nSave File');
+      console.log('~~~~~~~~~');
       console.log(`Player: ${saveFile.player.name}`);
       console.log(`Badges: ${saveFile.player.TrainerCard.badges}`);
       console.log(`Pokedex: ${saveFile.pokedex}`);
-      overwriteData = readlineSync.question("There is saved data found. Would you like to overwrite this [Y/N]: ");
+      overwriteData = readlineSync.question("\nThere is saved data found. Would you like to overwrite this [Y/N]: ");
       if(overwriteData == "Y"){
         // Reset their save file and start the introduction cutscene
         console.log("OVERWRITING DATA.");
@@ -66,7 +68,7 @@ function display(){
     }
   }
   else{
-    console.log("Invalid option selected.");
+    console.log("\nInvalid option selected.");
   }
 }
 

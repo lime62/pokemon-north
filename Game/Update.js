@@ -1,6 +1,6 @@
 let GameState = require('../Save/GameState');
 let MainMenu = require('../Game/MainMenu');
-let Cutscene = require('../Data/Cutscene');
+let Cutscene = require('../Data/Cutscene/Cutscene');
 let Town = require('../Data/Location/Towns/YamiTown');
 const GameMenu = require('../Menu/GameMenu');
 
