@@ -1,10 +1,10 @@
 let GameState = require('../../Save/GameState');
 const readlineSync = require('readline-sync');
+
 class PokemonCenter extends Building{
-  // Stores pokemon that are caught if the party is full
-  #PC
-  super(pc){
-    this.#PC = pc;
+  //TODO: PC later
+  constructor(name){
+    super(name);
   }
 
   //Shows a menu selection for healing the pokemon
@@ -23,9 +23,6 @@ class PokemonCenter extends Building{
     });
   }
 
-  getPC(){
-    return this.#PC;
-  }
 }
 
 module.exports = PokemonCenter;
