@@ -39,7 +39,7 @@ function display(){
   else if (selection == "N"){
     if(dataSaved){
       console.log(`Player: ${saveFile.player.name}`);
-      console.log(`Badges: ${saveFile.player.getBadges()}`);
+      console.log(`Badges: ${saveFile.player.TrainerCard.badges}`);
       console.log(`Pokedex: ${saveFile.pokedex}`);
       overwriteData = readlineSync.question("There is saved data found. Would you like to overwrite this [Y/N]: ");
       if(overwriteData == "Y"){

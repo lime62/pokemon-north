@@ -3,7 +3,7 @@ const readlineSync = require('readline-sync');
 let GameState = require('../Save/GameState');
 const saveGame = require('../Menu/Save');
 
-let party = false;
+let partyExists = false;
 
   function showMenu(){
     console.log("Menu [M]");
@@ -11,9 +11,10 @@ let party = false;
 
   function showMenuOptions(){
     console.log("\nPokedex [D]");
-    if (GameState.player.getParty().length > 0){
+    party = GameState.player.getParty();
+    if (party.length > 0){
       console.log("Pokemon [P]");
-      party = true;
+      partyExists = true;
     }
     console.log("Trainer Card [T]");
     console.log("Save [S]");
@@ -28,7 +29,7 @@ let party = false;
     if (selection == 'D'){
       console.log(GameState.player.getPokedex());
     }
-    else if (selection == 'P' && party){
+    else if (selection == 'P' && partyExists){
       console.log(GameState.player.viewParty());
     }
     else if (selection == 'T'){

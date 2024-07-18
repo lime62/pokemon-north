@@ -4,7 +4,6 @@ const readlineSync = require('readline-sync');
 
 function saveGame(){
   let dataSaved;
-
   if(fs.existsSync('../Save/saveFile.json')){
     const data = fs.readFileSync('../Save/saveFile.json');
       dataSaved = JSON.parse(data);
@@ -31,7 +30,7 @@ function saveGame(){
       const saveFile = { 
         player: GameState.player,
         location: GameState.location,
-        pokedex: GameState.player.getOwned(),
+        pokedex: GameState.pokedex,
         position: GameState.position
       };
       console.log("Saving data...\n");
