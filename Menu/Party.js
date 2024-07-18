@@ -5,6 +5,10 @@ class Party{
     this.#pokemon = [];
   }
 
+  getPokemon(){
+    return this.#pokemon;
+  }
+
   // Shows list of pokemon in party when 'Pokemon' is selected in the menu
   viewParty(){
     if(this.#pokemon.length > 1){

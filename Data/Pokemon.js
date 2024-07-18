@@ -90,7 +90,7 @@ const Pokemon = [
         // Spinarak evolves at level 22
         level: 22,
         // Evolves into Ariados
-        pokemon: Pokemon[1]
+        pokemon: "Ariados"
       }
     ]
   },
@@ -262,7 +262,7 @@ const Pokemon = [
         // Must have ancient power learned
         moveRequired: "Ancient Power",
         // Evolves into Yanmega
-        pokemon: Pokemon[3]
+        pokemon: "Yanmega"
       }
     ]
   },

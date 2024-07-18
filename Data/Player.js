@@ -24,6 +24,9 @@ class Player{
     return this.#name;
   }
 
+  getParty(){
+    return this.Party;
+  }
 }
 
 module.exports = Player;
