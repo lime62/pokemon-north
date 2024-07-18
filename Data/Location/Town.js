@@ -4,7 +4,8 @@ let GameState = require('../../Save/GameState');
 
 class Town extends Location {
   #Building
-  super(buildings){
+  constructor(name, buildings){
+    super(name); 
     this.#Building = buildings;
   }
 

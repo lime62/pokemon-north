@@ -5,7 +5,8 @@ const readlineSync = require('readline-sync');
 class Route extends Location{
   // In addition to some npcs, there are mostly trainers.
   #trainers
-  super(trainers){
+  constructor(name, trainers){
+    super(name);
     this.#trainers = trainers;
   }
 

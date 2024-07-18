@@ -4,7 +4,8 @@ let GameState = {
   location: "",
   position: "",
   menuOn: true,
-  cutsceneOn: false
+  cutsceneOn: false,
+  overworld: false
 }
 
 module.exports = GameState;

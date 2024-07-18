@@ -25,7 +25,7 @@ class Player{
   }
 
   getParty(){
-    return this.Party;
+    return this.Party.getPokemon();
   }
 }
 

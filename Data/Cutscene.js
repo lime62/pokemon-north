@@ -12,6 +12,7 @@ const name = readlineSync.question("Jet:\tWhat is your name: ");
 console.log(`\nJet:\tAh, so your name is ${name}.\n`)
 const gender = readlineSync.question("Jet:\tWhat is your gender: ");
 
+// Creates a new player
 const player = new Player(name, gender);
 GameState.player = player;
 
@@ -33,6 +34,8 @@ GameState.cutsceneOn = true;
 function YamiTown(){
   console.log("Welcome to Yami Town!");
   GameState.cutsceneOn = false;
+  // Lets player do their actions basically
+  GameState.overworld = true;
 }
 
 module.exports = { Introduction, YamiTown }
