@@ -3,6 +3,7 @@ let GameState = {
   player: {},
   location: "",
   position: "",
+  pokedex: 0,
   menuOn: true,
   cutsceneOn: false,
   overworld: false

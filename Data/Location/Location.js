@@ -13,54 +13,56 @@ class Location{
     this.#name = name;
   }
 
-  // Pick activities to do depending where you are
-  explore(){
-    let selection;
-    while(selection !== 'T' && selection != 'L'){
-      // Shows the name of the location
-      console.log(`${this.#name}`);
-      // If there are NPCS in the location, let the user know you can talk to people
-      if(this.#NPC.length > 0){
-        console.log("Talk to People [T]");
+  selectOption(){
+    const option = readlineSync.question("Selection: ");
+    return option;
+  }
+
+  // Displays option for what the player can generally do in their location
+  showlocationActivities(){
+    // If there are NPCS in the location, let the user know you can talk to people
+    if(this.#NPC.length > 0){
+      console.log("Talk to People [T]");
+    }
+    console.log("Leave Location [L]");
+  }
+
+  // Handles the location activity selected
+  locationActivities(selection){
+    if(selection == 'T'){
+      let i = 0;
+      //If player chooses to talk to people, show a list of available npcs to talk to
+      this.#NPC.forEach(npc => {
+        console.log(`${++i}: ${npc}`);
+      });
+      let npcSelection = readlineSync.question("Select the number that corresponds with who you want to talk to: ");
+      const pickedNpc = this.#NPC[npcSelection - 1];
+      if (pickedNpc){
+        console.log(`Now talking with ${pickedNpc}`);
       }
-      // Lets the user know they can leave the current location (town/city/route)
-      console.log("Leave Location [L]");
-      selection = readlineSync.question("Selection: ");
-      if (selection == "T"){
-        let i = 0;
-        //If player chooses to talk to people, show a list of available npcs to talk to
-        this.#NPC.forEach(npc => {
-          console.log(`${++i}: ${npc}`);
-        });
-        let npcSelection = readlineSync.question("Select the number that corresponds with who you want to talk to: ");
-        const pickedNpc = this.#NPC[npcSelection - 1];
-        if (pickedNpc){
-          console.log(`Now talking with ${pickedNpc}`);
-        }
-      }
+    }
       // If player leaves show a list of connecting locations
-      if(selection == "L"){
-        // If the player has not received a pokemon yet, stop them.
-        if(GameState.player.getParty().length == 0){
-          console.log("You must get a pokemon from the professor before starting your journey.");
-          return -2;
+    else if(selection == "L"){
+      // If the player has not received a pokemon yet, stop them.
+      if(GameState.player.getParty().length == 0){
+        console.log("You must get a pokemon from the professor before starting your journey.");
+        return -2;
+      }
+      else{
+        let i = 0;
+        this.#connectingLocations.forEach(location => {
+          console.log(`${++i}: ${location.getName()}`);
+        });
+        let locationSelection = readlineSync.question("Select the number that corresponds with your location: ");
+        const pickedLocation = this.#connectingLocations[locationSelection - 1];
+        // If the location exists, go to it.
+        if(pickedLocation){
+          // Updates location in game
+          console.log(`Now going to ${pickedLocation.getName()}`);
+          GameState.location = pickedLocation;
         }
         else{
-          let i = 0;
-          this.#connectingLocations.forEach(location => {
-            console.log(`${++i}: ${location.getName()}`);
-          });
-          let locationSelection = readlineSync.question("Select the number that corresponds with your location: ");
-          const pickedLocation = this.#connectingLocations[locationSelection - 1];
-          // If the location exists, go to it.
-          if(pickedLocation){
-            // Updates location in game
-            console.log(`Now going to ${pickedLocation.getName()}`);
-            GameState.location = pickedLocation;
-          }
-          else{
-            return -1;
-          }
+          return -1;
         }
       }
     }

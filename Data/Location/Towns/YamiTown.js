@@ -3,8 +3,8 @@ const Building = require('../../Building/Building');
 const RouteOne = require('../Routes/RouteOne');
 
 // Set buildings for this town
-const PlayerHouse = new Building("Your House", 2, ["Your Room"]);
-const RivalHouse = new Building("")
+const PlayerHouse = new Building("Your House", 2, ["Downstairs", "Your Room"]);
+const RivalHouse = new Building("Friend's House", 1, ["Downstairs", "Friend's Room"])
 const Lab = new Building("Professor Jet's Lab", 1, ["Main Lab"]);
 
 const buildings = [PlayerHouse, RivalHouse, Lab];

@@ -5,27 +5,43 @@ const TrainerCard = require('../Menu/TrainerCard');
 const Pokemon = require('../Data/Pokemon');
 
 class Player{
-  #name;
-  #gender;
-  Pokedex;
+  name;
+  gender;
+  #Pokedex;
   TrainerCard;
   Party;
 
   constructor(name, gender){
-    this.#name = name;
-    this.#gender = gender;
+    this.name = name;
+    this.gender = gender;
     this.Party = new Party();
     this.TrainerCard = new TrainerCard();
-    this.TrainerCard.setDetails(this.#name, this.#gender);
-    this.Pokedex = new Pokedex(Pokemon);
+    this.TrainerCard.setDetails(this.name, this.gender);
+    this.#Pokedex = new Pokedex(Pokemon);
   }
 
   getName(){
-    return this.#name;
+    return this.name;
   }
 
   getParty(){
     return this.Party.getPokemon();
+  }
+
+  getPokedex(){
+    return this.#Pokedex.getDex();
+  }
+
+  getOwned(){
+    return this.#Pokedex.ownedPokemon();
+  }
+
+  getTrainerCard(){
+    return this.TrainerCard.displayTrainerCard();
+  }
+
+  getBadges(){
+    return this.TrainerCard.getBadges();
   }
 }
 
