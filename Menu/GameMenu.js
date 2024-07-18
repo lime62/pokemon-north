@@ -10,7 +10,9 @@ let partyExists = false;
   }
 
   function showMenuOptions(){
-    console.log("\nPokedex [D]");
+    console.log("\nIn-Game Menu");
+    console.log("~~~~~~~~~~~~");
+    console.log("Pokedex [D]");
     party = GameState.player.getParty();
     if (party.length > 0){
       console.log("Pokemon [P]");
@@ -21,7 +23,7 @@ let partyExists = false;
   }
 
   function selectOption(){
-    const selection = readlineSync.question("\nSelection: ");
+    const selection = readlineSync.question("Selection: ");
     return selection;
   }
 

@@ -16,6 +16,8 @@ class Town extends Location {
 
   // Handles visiting buildings in the area
   townActivities(visit){
+    console.log("\nView Buildings");
+    console.log("~~~~~~~~~~~~~~")
       if(visit == "B"){
         let i = 0;
         this.#Building.forEach(building => {

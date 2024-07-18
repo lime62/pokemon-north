@@ -32,6 +32,8 @@ class Location{
     if(selection == 'T'){
       let i = 0;
       //If player chooses to talk to people, show a list of available npcs to talk to
+      console.log("\nChat With");
+      console.log("~~~~~~~~~");
       this.#NPC.forEach(npc => {
         console.log(`${++i}: ${npc}`);
       });
@@ -45,7 +47,7 @@ class Location{
     else if(selection == "L"){
       // If the player has not received a pokemon yet, stop them.
       if(GameState.player.getParty().length == 0){
-        console.log("You must get a pokemon from the professor before starting your journey.");
+        console.log("\nYou must get a pokemon from the professor before starting your journey.");
         return -2;
       }
       else{
