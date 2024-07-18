@@ -6,6 +6,7 @@ const fs = require('fs');
 function display(){
   GameState.menuOn = true;
   console.log("Pokemon North");
+  console.log("~~~~~~~~~~~~~");
   const selection = readlineSync.question("New Game or Continue [N/C]: ");
   const dataSaved = saveFile.player && saveFile.location;
 

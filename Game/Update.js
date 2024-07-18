@@ -36,7 +36,8 @@ function showCutscene(){
 }
 
 function townActivities(){
-  console.log(GameState.location);
+  console.log(`\n${GameState.location}`);
+  console.log("~~~~~~~~~~~~~~~~~~~~~");
   switch(GameState.location){
     case "Yami Town":
       Town.showlocationActivities();
