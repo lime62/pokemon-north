@@ -16,7 +16,6 @@ function saveGame(){
     console.log(`Player: ${saveFile.player.name}`);
     console.log(`Badges ${saveFile.player.badges}`);
     console.log(`Pokedex: ${saveFile.player.Pokedex.ownedPokemon()}`);
-    //TODO: Add their total owned pokemon from the pokedex.
     if (answer == "Y"){
       const saveFile = { player: GameState.player, location: GameState.location};
       fs.writeFileSync('./Save/saveFile.json', JSON.stringify(saveFile));
