@@ -1,6 +1,6 @@
 const readlineSync = require('readline-sync');
-const Player = require('../Data/Player');
-const GameState = require('../Save/GameState');
+const Player = require('../Player/Player');
+const GameState = require('../../Save/GameState');
 
 function Introduction(){
 console.log("Jet:\tHello! Welcome to the world of Pokemon! My name is Jet!");

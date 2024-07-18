@@ -1,4 +1,4 @@
-let GameState = require('../../Save/GameState');
+let GameState = require('../../../Save/GameState');
 const readlineSync = require('readline-sync');
 
 class PokemonCenter extends Building{

@@ -1,4 +1,4 @@
-const Pokemon = require('../Data/Pokemon');
+const Pokemon = require('../Data/Pokemon/Pokemon');
 
 class Pokedex {
   pokemon = [];

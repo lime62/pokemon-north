@@ -2,7 +2,7 @@
 // ERROR CODE: -2 | NO POKEMON IN PARTY
 
 const readlineSync = require('readline-sync');
-let GameState = require('../../Save/GameState');
+let GameState = require('../../../Save/GameState');
 class Location{
   #name
   #mapDescription

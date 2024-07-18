@@ -1,5 +1,5 @@
-const Town = require('../Town');
-const Building = require('../../Building/Building');
+const Town = require('../Base/Town');
+const Building = require('../../Building/Base/Building');
 const RouteOne = require('../Routes/RouteOne');
 
 // Set buildings for this town

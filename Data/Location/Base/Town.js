@@ -1,6 +1,6 @@
 const Location = require('./Location');
 const readlineSync = require('readline-sync');
-let GameState = require('../../Save/GameState');
+let GameState = require('../../../Save/GameState');
 
 class Town extends Location {
   #Building

@@ -17,11 +17,13 @@ function saveGame(){
       pokedex: GameState.player.getOwned(), 
       position: GameState.position
     };
-    console.log("Saving data...\n");
+    console.log("\nSaving data...");
     fs.writeFileSync('../Save/saveFile.json', JSON.stringify(saveFile));
   }
   else{
     // Ask the user if they want to overwrite their previous saved file
+    console.log('\nSave File');
+    console.log('~~~~~~~~~');
     console.log(`Player: ${dataSaved.player.name}`);
     console.log(`Badges ${dataSaved.player.TrainerCard.badges}`);
     console.log(`Pokedex: ${dataSaved.pokedex}`);
