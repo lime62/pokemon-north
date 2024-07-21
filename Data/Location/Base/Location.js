@@ -1,6 +1,5 @@
 // Is a base for all routes, towns and cities in the game
 // ERROR CODE: -2 | NO POKEMON IN PARTY
-
 const readlineSync = require('readline-sync');
 let GameState = require('../../../Save/GameState');
 class Location{
@@ -35,12 +34,12 @@ class Location{
       console.log("\nChat With");
       console.log("~~~~~~~~~");
       this.#NPC.forEach(npc => {
-        console.log(`${++i}: ${npc}`);
+        console.log(`${++i}: ${npc.getName()}`);
       });
       let npcSelection = readlineSync.question("Select the number that corresponds with who you want to talk to: ");
       const pickedNpc = this.#NPC[npcSelection - 1];
       if (pickedNpc){
-        console.log(`Now talking with ${pickedNpc}`);
+        console.log(`${pickedNpc.getName()}: ${pickedNpc.stateHandler()}`);
       }
     }
       // If player leaves show a list of connecting locations

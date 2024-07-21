@@ -1,7 +1,7 @@
 let GameState = require('../Save/GameState');
 let MainMenu = require('../Game/MainMenu');
 let Cutscene = require('../Data/Cutscene/Cutscene');
-let Town = require('../Data/Location/Towns/YamiTown');
+const Yami = require('../Data/Location/Towns/YamiTown');
 const GameMenu = require('../Menu/GameMenu');
 
 function update(){
@@ -40,15 +40,15 @@ function townActivities(){
   console.log("~~~~~~~~~~~~~~~~~~~~~");
   switch(GameState.location){
     case "Yami Town":
-      Town.showlocationActivities();
-      Town.showTownActivities();
+      Yami.YamiTown.showlocationActivities();
+      Yami.YamiTown.showTownActivities();
       GameMenu.showMenu();
-      const option = Town.selectOption();
+      const option = Yami.YamiTown.selectOption();
       if (option == "B"){
-        Town.townActivities(option);
+        Yami.townActivities(option);
       }
       else if (option == 'T' || option == 'L'){
-        Town.locationActivities(option);
+        Yami.YamiTown.locationActivities(option);
       }
       else if (option == 'M'){
         GameMenu.showMenuOptions();
