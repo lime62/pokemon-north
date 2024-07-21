@@ -31,6 +31,9 @@ class NPC{
     const states = Object.values(this.#state);
     for(let i = 0; i < states.length; i++){
       if(states[i]){
+        //CHANGE STATE TO FALSE AND NEXT TO TRUE
+        states[i] = false;
+        states[i + 1] = true;
         return this.#dialogue[i];
       }
     }

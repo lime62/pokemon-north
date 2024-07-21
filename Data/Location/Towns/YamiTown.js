@@ -20,10 +20,10 @@ Mom.setState({
 );
 Mom.setDialogue(
   [
-    "\tThe time has come for you to go off on your own and build your own story! Professor Jet is looking for you."
+    `\tThe time has come for you to go off on your own and build your own story! Professor Jet is looking for you.`
   ],
   [
-    "\tCome get some rest!",
+    `\tCome get some rest!`,
   ]
 );
 
@@ -49,7 +49,7 @@ Michael.setState([{
 }]);
 
 Michael.setDialogue(
-  ["\tYou can store and recall pokemon and items in your PC. This new tech stuff is awesome!"]
+  [`\tYou can store and recall pokemon and items in your PC. This new tech stuff is awesome!`]
 );
 
 
@@ -69,20 +69,20 @@ playerSelected: false
 // Different dialogues professor jet has
 ProfessorJet.setDialogue(
   [
-      "\tHey there, please wait! It's too dangerous to go out.",
-      "\tWild pokemon live in the grass up ahead. They can be found all over this region.",
-      "\tYou need your own pokemon for protection. Please come with me!"
+    `\tHey there, please wait! It's too dangerous to go out.
+     \t\tWild pokemon live in the grass up ahead. They can be found all over this region.
+     \t\tYou need your own pokemon for protection. Please come with me!`
   ], 
   [
-      "\t There are three pokemon here! They are inside these pokeballs.",
-      "\tI only have three left, you can choose one to be your friend!",
-      "\tSo, which pokemon will you choose?"
+    `\tThere are three pokemon here! They are inside these pokeballs.
+     \t\tI only have three left, you can choose one to be your friend!
+     \t\tSo, which pokemon will you choose?`
   ],
   [
-      "\tAh, so this is the pokemon you'd like?"
+    `\tAh, so this is the pokemon you'd like?`
   ],
   [
-      "\tThis one is a firecracker!"
+    `\tThis one is a firecracker!`
   ]
 )
 
