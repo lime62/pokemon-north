@@ -92,7 +92,9 @@ const Pokemon = [
         // Evolves into Ariados
         pokemon: "Ariados"
       }
-    ]
+    ],
+    heldItem: "",
+    status: ""
   },
   {
     number: "#002",
@@ -173,6 +175,8 @@ const Pokemon = [
     spAttackEV: 0,
     spDefenseEV: 0,
     speedEV: 0,
+    heldItem: "",
+    status: ""
   },
   {
     number: "#003",
@@ -264,7 +268,9 @@ const Pokemon = [
         // Evolves into Yanmega
         pokemon: "Yanmega"
       }
-    ]
+    ],
+    heldItem: "",
+    status: ""
   },
   {
     number: "#004",
@@ -331,6 +337,8 @@ const Pokemon = [
     spAttackEV: 0,
     spDefenseEV: 0,
     speedEV: 0,
+    heldItem: "",
+    status: ""
   },
 ]
 
